@@ -1,8 +1,6 @@
 package com.chef.fxstart;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +13,7 @@ public class FxControls extends Application {
     Label response;
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         stage.setTitle("Using fx controls");
 
         FlowPane rootNode = new FlowPane();
@@ -28,9 +26,7 @@ public class FxControls extends Application {
 
         Button hide = new Button("Hide");
         // Setting the next scene
-        hide.setOnAction(event -> {
-            stage.setScene(scene1);
-        });
+        hide.setOnAction(event -> stage.setScene(scene1));
         rootNode.getChildren().add(hide);
 
         // To delete this control from the scene just call
@@ -52,19 +48,9 @@ public class FxControls extends Application {
         Button btnDown = new Button("Down");
 
         // Adding handlers to button
-        btnUp.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                response.setText("Up pressed");
-            }
-        });
+        btnUp.setOnAction(event -> response.setText("Up pressed"));
 
-        btnDown.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                response.setText("Down pressed");
-            }
-        });
+        btnDown.setOnAction(event -> response.setText("Down pressed"));
 
         // Adding all elements
         second.getChildren().addAll(btnUp, btnDown, response);

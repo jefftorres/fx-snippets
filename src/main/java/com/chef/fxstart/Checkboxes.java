@@ -25,7 +25,7 @@ public class Checkboxes extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         primaryStage.setTitle("Checkboxes demo yea");
 
         // Now they'll be one over another instead of inline
@@ -46,7 +46,9 @@ public class Checkboxes extends Application {
         selected = new Label("");
 
         cbSmartphone = new CheckBox("Smartphone");
+        // This allows the checkbox to use Indeterminate state
         cbSmartphone.setAllowIndeterminate(true);
+
         cbTablet = new CheckBox("Tablet");
         cbNotebook = new CheckBox("Notebook");
         cbDesktop = new CheckBox("Desktop");

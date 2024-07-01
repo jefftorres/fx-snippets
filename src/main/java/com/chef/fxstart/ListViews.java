@@ -1,8 +1,6 @@
 package com.chef.fxstart;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -52,12 +50,7 @@ public class ListViews extends Application {
 
         // Add an event listener for every selected item in the list
         lvSelModel.selectedItemProperty().addListener(
-                new ChangeListener<String>() {
-                    @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        response.setText("Device selected is " + newValue);
-                    }
-                });
+                (observable, oldValue, newValue) -> response.setText("Device selected is " + newValue));
 
         pane.getChildren().addAll(lvDevices, response);
         primaryStage.show();

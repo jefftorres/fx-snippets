@@ -51,6 +51,7 @@ public class EffectsAndTransforms extends Application {
 
         reflection.setTopOpacity(0.7);
         reflection.setBottomOpacity(0.3);
+        // Apply reflection on Label
         reflect.setEffect(reflection);
 
         btnRotate.setOnAction(ae -> {
